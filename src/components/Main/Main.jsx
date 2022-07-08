@@ -1,5 +1,15 @@
+import Hero from '../Hero';
+import Header from '../Header';
+import VotingBlock from '../VotingBlock';
+
 const Main = () => {
-  return <div>Main</div>;
+  return (
+    <main>
+      <Hero />
+      <Header />
+      <VotingBlock />
+    </main>
+  );
 };
 
 export default Main;

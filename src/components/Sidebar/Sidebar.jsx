@@ -1,5 +1,13 @@
+import Navigation from '../Navigation';
+import Logo from '../Logo';
+
 const Sidebar = () => {
-  return <div>Sidebar</div>;
+  return (
+    <header>
+      <Logo />
+      <Navigation />
+    </header>
+  );
 };
 
 export default Sidebar;
