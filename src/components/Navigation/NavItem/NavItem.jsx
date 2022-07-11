@@ -1,13 +1,22 @@
 import PropTypes from 'prop-types';
+import Button from '../../common/Button';
+import s from './NavItem.module.css';
 
-const NavItem = ({ name, image }) => {
+const NavItem = ({ name, image, backgroundColor }) => {
   return (
-    <div className="navWrapper">
-      <div className="imgWrapper">
+    <li className={s.ItemWrapper}>
+      <div
+        className={s.ImgWrapper}
+        style={{ backgroundColor: backgroundColor }}
+      >
         <img src={image} alt="navImg"></img>
       </div>
-      <a href="/">{name}</a>
-    </div>
+      <Button>
+        <a href="/" className={s.BtnText}>
+          {name}
+        </a>
+      </Button>
+    </li>
   );
 };
 

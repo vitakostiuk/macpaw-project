@@ -1,18 +1,20 @@
-import Button from '../Button';
 import NavItem from './NavItem';
 import { navButtons } from '../../data/navigation';
+import s from './Navigation.module.css';
 
 const Navigation = () => {
   return (
-    <section>
-      <h1>Hi intern!</h1>
-      <p>Welcome to MI 2022 Front-end test</p>
-      <h2>Lets start using The Cat API</h2>
-      <nav>
-        {navButtons.map(({ name, image }, index) => (
-          <Button key={index}>
-            <NavItem name={name} image={image} />
-          </Button>
+    <section className={s.Wrapper}>
+      <h2 className={s.Title}>Lets start using The Cat API</h2>
+      <nav className={s.NavList}>
+        {navButtons.map(({ name, image, backgroundColor }, index) => (
+          <ul key={index}>
+            <NavItem
+              name={name}
+              image={image}
+              backgroundColor={backgroundColor}
+            />
+          </ul>
         ))}
       </nav>
     </section>

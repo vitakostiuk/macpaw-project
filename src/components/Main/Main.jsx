@@ -1,13 +1,18 @@
 import Hero from '../Hero';
 import Header from '../Header';
-import VotingBlock from '../VotingBlock';
+import VotingPage from '../VotingPage';
+import BreedsPage from '../BreedsPage';
+import GalleryPage from '../GalleryPage';
+import s from './Main.module.css';
 
 const Main = () => {
   return (
-    <main>
+    <main className={s.Main}>
       <Hero />
       <Header />
-      <VotingBlock />
+      <VotingPage />
+      <BreedsPage />
+      <GalleryPage />
     </main>
   );
 };

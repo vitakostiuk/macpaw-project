@@ -1,0 +1,29 @@
+.Sidebar {
+  position: sticky;
+  top: 0;
+  width: 446px;
+  /* height: 544px; */
+  min-height: 100vh;
+  align-self: flex-start;
+  padding-left: 103px;
+  padding-right: 135px;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+.Title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.32;
+  margin-top: 80px;
+}
+
+.SubTitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.45;
+  margin-top: 10px;
+  color: var(--text-color);
+}

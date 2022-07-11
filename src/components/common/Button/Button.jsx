@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import s from './Button.module.css';
 
 const Button = ({ children }) => {
-  return <button type="button">{children}</button>;
+  return (
+    <button type="button" className={s.Btn}>
+      {children}
+    </button>
+  );
 };
 
 Button.propTypes = {

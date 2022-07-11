@@ -1,0 +1,14 @@
+.Btn {
+  display: inline-block;
+  width: 138px;
+  height: 36px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Btn:hover,
+.Btn:focus {
+  background-color: var(--accent-color);
+}

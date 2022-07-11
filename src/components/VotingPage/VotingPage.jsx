@@ -1,14 +1,18 @@
-import Paper from '../common/Paper';
-import Button from '../Button';
+import Section from '../common/Section';
+import Button from '../common/Button';
 import userActionsLogs from '../../data/userActionsLogs.json';
+import catImg from 'images/image-cat.png';
+import { ReactComponent as ArrowLeftBtn } from 'images/back-20.svg';
 
 const VotingBlock = () => {
   return (
     <div>
-      <Paper>
-        <button type="button"></button>
+      <Section>
+        <button type="button">
+          <ArrowLeftBtn />
+        </button>
         <Button>VOTING</Button>
-        <img src="" alt="cat"></img>
+        <img src={catImg} alt="cat"></img>
         <ul className="emojiList">
           <li>Like</li>
           <li>Favorite</li>
@@ -23,7 +27,7 @@ const VotingBlock = () => {
             </li>
           ))}
         </ul>
-      </Paper>
+      </Section>
     </div>
   );
 };

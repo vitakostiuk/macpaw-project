@@ -1,0 +1,58 @@
+@import-normalize;
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+:root {
+  --accent-color: #ff868e;
+  --strong-text-color: #1d1d1d;
+  --text-color: #8c8c8c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f7;
+  color: var(--strong-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
