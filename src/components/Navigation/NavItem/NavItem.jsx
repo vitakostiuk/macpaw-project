@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import Button from '../../common/Button';
 import s from './NavItem.module.css';
 
-const NavItem = ({ name, image, backgroundColor }) => {
+const NavItem = ({ name, image, backgroundColor, path }) => {
   return (
     <li className={s.ItemWrapper}>
       <div
@@ -12,9 +13,14 @@ const NavItem = ({ name, image, backgroundColor }) => {
         <img src={image} alt="navImg"></img>
       </div>
       <Button>
-        <a href="/" className={s.BtnText}>
+        <NavLink
+          to={path}
+          // className={s.BtnText}
+          // activeClassName={s.BtnTextActive}
+          className={({ isActive }) => (isActive ? s.BtnTextActive : s.BtnText)}
+        >
           {name}
-        </a>
+        </NavLink>
       </Button>
     </li>
   );
@@ -23,6 +29,8 @@ const NavItem = ({ name, image, backgroundColor }) => {
 NavItem.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export default NavItem;

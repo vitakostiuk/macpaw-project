@@ -1,0 +1,24 @@
+.EmojiPage {
+  display: flex;
+}
+
+.Item {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.Item:last-child {
+  margin-right: 0;
+}
+
+.Link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

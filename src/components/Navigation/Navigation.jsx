@@ -7,12 +7,13 @@ const Navigation = () => {
     <section className={s.Wrapper}>
       <h2 className={s.Title}>Lets start using The Cat API</h2>
       <nav className={s.NavList}>
-        {navButtons.map(({ name, image, backgroundColor }, index) => (
+        {navButtons.map(({ name, image, backgroundColor, path }, index) => (
           <ul key={index}>
             <NavItem
               name={name}
               image={image}
               backgroundColor={backgroundColor}
+              path={path}
             />
           </ul>
         ))}

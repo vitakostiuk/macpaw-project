@@ -3,6 +3,7 @@
   width: 138px;
   height: 36px;
   background-color: #ffffff;
+  color: var(--accent-color);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -11,4 +12,5 @@
 .Btn:hover,
 .Btn:focus {
   background-color: var(--accent-color);
+  color: #ffffff;
 }
