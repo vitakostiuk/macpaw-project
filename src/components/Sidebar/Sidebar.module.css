@@ -1,14 +1,18 @@
+.Wrapper {
+  height: 100vh;
+  /* border: 1px solid black; */
+}
+
 .Sidebar {
   position: sticky;
   top: 0;
   width: 446px;
-  /* height: 544px; */
-  min-height: 100vh;
+  height: 544px;
   align-self: flex-start;
   padding-left: 103px;
   padding-right: 135px;
   background-color: transparent;
-  border: 1px solid black;
+  /* border: 1px solid green; */
 }
 
 .Title {

@@ -1,0 +1,29 @@
+.Text {
+  width: 504px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.Id {
+  composes: Text;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--strong-text-color);
+}
+
+.Time {
+  composes: Text;
+  color: var(--strong-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 61px;
+  height: 30px;
+  margin-left: 15px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}

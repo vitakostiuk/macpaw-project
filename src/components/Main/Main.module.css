@@ -1,5 +1,6 @@
 .Main {
   width: 680px;
-  height: 840px;
-  border: 1px solid red;
+  height: 100vh;
+  /* border: 1px solid blue; */
+  overflow: hidden;
 }
