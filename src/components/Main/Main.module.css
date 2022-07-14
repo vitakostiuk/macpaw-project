@@ -2,5 +2,6 @@
   width: 680px;
   height: 100vh;
   /* border: 1px solid blue; */
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* overflow: scroll; */
 }

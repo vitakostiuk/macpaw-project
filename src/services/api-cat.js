@@ -6,6 +6,8 @@ const fetchData = async (endpoint, options = {}) => {
     `${BASE_URL}/${endpoint}?api_key=${API_KEY}`,
     options,
   );
+  // console.log(res);
+  // console.log(res.json());
   return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
 };
 

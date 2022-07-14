@@ -1,5 +1,5 @@
 import { BallTriangle } from 'react-loader-spinner';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import UserActionLogs from '../UserActionLogs';
 import { ReactComponent as Like } from 'images/like-white-30.svg';
 import { ReactComponent as Favorite } from 'images/fav-white-30.svg';
@@ -10,8 +10,6 @@ import s from './Voting.module.css';
 
 const getTime = () => {
   const date = new Date().toLocaleTimeString();
-  console.log(date.slice(0, 5));
-  // return date.slice(3, date.length);
   return date.slice(0, 5);
 };
 
@@ -25,11 +23,18 @@ const VotingBlock = () => {
   const [isClickFavourite, setIsClickFavourite] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const isFirstRender = useRef(true);
+
   // First fetch random cat and fetch after each click on button VOTING
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     const fetchRandomCat = async () => {
       try {
         setIsLoading(true);
+
         if (isClickVoting) {
           const cat = await api.getData('images/search');
           setOneRandonCat(cat);

@@ -7,7 +7,7 @@ const Sidebar = () => {
   return (
     <div className={s.Wrapper}>
       <header className={s.Sidebar}>
-        <NavLink to="/">
+        <NavLink to="/macpaw-project">
           <LogoIcon width="106" height="24" />
         </NavLink>
         <h1 className={s.Title}>Hi intern!</h1>
