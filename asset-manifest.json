@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/macpaw-project/static/css/main.9d2d5c08.css",
-    "main.js": "/macpaw-project/static/js/main.7d34ef77.js",
+    "main.css": "/macpaw-project/static/css/main.33fbc0f7.css",
+    "main.js": "/macpaw-project/static/js/main.bd07d188.js",
     "static/media/pet-breeds.svg": "/macpaw-project/static/media/pet-breeds.c0274528ec4106afa608c17eb19574a4.svg",
     "static/media/girl-and-pet.svg": "/macpaw-project/static/media/girl-and-pet.393294a103693566d0c5d88fa60bf8f8.svg",
     "static/media/images-search.svg": "/macpaw-project/static/media/images-search.38e43039474803c2021cb4b4be4d502b.svg",
     "static/media/vote-table.svg": "/macpaw-project/static/media/vote-table.fcbe86ce0f3378d6ba8cced234b9d231.svg",
     "static/media/logo.svg": "/macpaw-project/static/media/logo.357eb1973096471ea6801715f338def2.svg",
     "static/media/fav-white-30.svg": "/macpaw-project/static/media/fav-white-30.f227a565d20f4132b2ab1478ff5d7531.svg",
+    "static/media/dislike-color-20.svg": "/macpaw-project/static/media/dislike-color-20.c0b569aff7aa7e98ba74692e73efe85e.svg",
+    "static/media/like-color-20.svg": "/macpaw-project/static/media/like-color-20.46dd82e42e10fe2adbd0051df0904a7b.svg",
     "static/media/search-20.svg": "/macpaw-project/static/media/search-20.518e734fea7126c7ee63d99a12ced82b.svg",
     "index.html": "/macpaw-project/index.html",
     "static/media/back-20.svg": "/macpaw-project/static/media/back-20.ae0c6b36105721beb526163d61bc854c.svg",
@@ -16,11 +18,12 @@
     "static/media/dislike-white-30.svg": "/macpaw-project/static/media/dislike-white-30.57dfd1a58ee0d5ec39c963b2bd8614e3.svg",
     "static/media/like-white-30.svg": "/macpaw-project/static/media/like-white-30.cd46571da4e65da3345c452ef3eb0501.svg",
     "static/media/fav-color-30.svg": "/macpaw-project/static/media/fav-color-30.98537c33f89ac9488c30c39931457507.svg",
-    "main.9d2d5c08.css.map": "/macpaw-project/static/css/main.9d2d5c08.css.map",
-    "main.7d34ef77.js.map": "/macpaw-project/static/js/main.7d34ef77.js.map"
+    "static/media/fav-color-20.svg": "/macpaw-project/static/media/fav-color-20.61c5ae583c4065d4bce10190c38ded94.svg",
+    "main.33fbc0f7.css.map": "/macpaw-project/static/css/main.33fbc0f7.css.map",
+    "main.bd07d188.js.map": "/macpaw-project/static/js/main.bd07d188.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d2d5c08.css",
-    "static/js/main.7d34ef77.js"
+    "static/css/main.33fbc0f7.css",
+    "static/js/main.bd07d188.js"
   ]
 }
