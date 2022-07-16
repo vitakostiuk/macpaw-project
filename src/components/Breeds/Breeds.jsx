@@ -70,6 +70,9 @@ const BreedsPage = () => {
         {breeds.map(({ name, id, url }) => (
           <li key={id} className={s.GalleryItem}>
             <img src={url} alt="cat" className={s.Img} />
+            <div className={s.After}>
+              <button className={s.Name}>{name}</button>
+            </div>
           </li>
         ))}
       </ul>
