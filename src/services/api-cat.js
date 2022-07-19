@@ -11,7 +11,39 @@ const fetchData = async (endpoint, options = {}) => {
   return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
 };
 
+const fetchDataPagination = async (
+  endpoint,
+  limit = null,
+  page = null,
+  breed_ids = '',
+  order = '',
+  options = {},
+) => {
+  const queryParams = new URLSearchParams({
+    key: 'b1dfeea4-d632-4776-b494-723bac3c8eb2',
+    limit,
+    page,
+    breed_ids,
+    order,
+  });
+
+  const res = await fetch(
+    `${BASE_URL}/${endpoint}?api_key=${queryParams}`,
+    options,
+  );
+  return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
+};
+
 const getData = (endpoint, options = {}) => fetchData(endpoint, { ...options });
+
+const getBreeds = (
+  endpoint,
+  limit = null,
+  page = null,
+  id = '',
+  order = '',
+  options = {},
+) => fetchDataPagination(endpoint, limit, page, id, order, { ...options });
 
 const addVote = (endpoint, data, options = {}) => {
   const finalOptions = {
@@ -46,6 +78,7 @@ const addVote = (endpoint, data, options = {}) => {
 export {
   getData,
   addVote,
+  getBreeds,
   // editItem,
   // deleteItem
 };
