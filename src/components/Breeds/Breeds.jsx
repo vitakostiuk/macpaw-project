@@ -9,7 +9,8 @@ import { useState, useEffect, useRef } from 'react';
 import { ReactComponent as ArrowLeftBtn } from 'images/back-20.svg';
 import { ReactComponent as SortAB } from 'images/sort-20.svg';
 import { ReactComponent as SortBA } from 'images/soft-revert-20.svg';
-import { limitImg } from '../../data/limitImg';
+import { limitImg } from '../../data/options';
+import { getBreedsOptions } from 'utils/breedsOptions';
 import * as api from '../../services/api-cat';
 import s from './Breeds.module.css';
 
@@ -23,20 +24,8 @@ const BreedsPage = () => {
   const [typeOfSort, setTypeOfSort] = useState('ASC');
   const [isLoading, setIsLoading] = useState(false);
   const [hiddenBtn, setHiddenBtn] = useState(true);
-  const [error, setError] = useState(null);
 
   const isFirstRender = useRef(true);
-
-  const getBreedsOptions = data => {
-    let breeds = data.map(({ name, id }) => {
-      return { label: name, value: name, id };
-    });
-    const breedsOptions = [
-      { label: 'All breeds', value: 'All breeds', id: '' },
-      ...breeds,
-    ];
-    return breedsOptions;
-  };
 
   // ---- GET ALL BREEDS
   useEffect(() => {
@@ -56,7 +45,13 @@ const BreedsPage = () => {
 
         // Update state --breedsOptions--
         const resultAll = await api.getData('breeds');
-        setBreedsOptions(getBreedsOptions(resultAll));
+        setBreedsOptions(
+          getBreedsOptions(resultAll, {
+            label: 'All breeds',
+            value: 'All breeds',
+            id: '',
+          }),
+        );
 
         setAllBreeds([]);
         // Update state --allBreeds-- and render all breeds
@@ -69,7 +64,7 @@ const BreedsPage = () => {
         );
         if (result.length === 0) {
           setHiddenBtn(false);
-          NotificationManager.warning(`There are not already images!`);
+          NotificationManager.warning(`There are not images!`);
           return setAllBreeds([]);
         }
 
@@ -81,7 +76,6 @@ const BreedsPage = () => {
         );
       } catch (error) {
         console.log(error);
-        setError(error);
       } finally {
         setIsLoading(false);
         setHiddenBtn(false);
@@ -99,6 +93,7 @@ const BreedsPage = () => {
 
     const getBreed = async () => {
       try {
+        setHiddenBtn(true);
         setAllBreeds([]);
         setIsLoading(true);
 
@@ -109,9 +104,10 @@ const BreedsPage = () => {
         const findedId = findBreedByName.id;
 
         // Update state --breed-- and render one breed's images
+        setBreed([]);
         const result = await api.getBreeds(
           'images/search',
-          null,
+          limit,
           null,
           findedId,
         );
@@ -122,13 +118,13 @@ const BreedsPage = () => {
         setBreed(result);
       } catch (error) {
         console.log(error);
-        setError(error);
       } finally {
         setIsLoading(false);
+        setHiddenBtn(true);
       }
     };
     getBreed();
-  }, [breedsOptions, name]);
+  }, [breedsOptions, limit, name]);
 
   // Update state --page--
   const incrementPage = () => {
@@ -169,19 +165,15 @@ const BreedsPage = () => {
             </option>
           ))}
         </select>
+        <select name="limit" onChange={handleChange} className={s.SelectLimit}>
+          {limitImg.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {`Limit: ${label}`}
+            </option>
+          ))}
+        </select>
         {name === 'All breeds' && (
           <>
-            <select
-              name="limit"
-              onChange={handleChange}
-              className={s.SelectLimit}
-            >
-              {limitImg.map(({ value, label }) => (
-                <option key={value} value={value}>
-                  {`Limit: ${label}`}
-                </option>
-              ))}
-            </select>
             <button
               type="button"
               className={s.SortBtn}
@@ -200,12 +192,14 @@ const BreedsPage = () => {
         )}
       </div>
       {isLoading && (
-        <BallTriangle
-          height="100"
-          width="100"
-          color="#ff868e"
-          ariaLabel="loading"
-        />
+        <div className={s.Loader}>
+          <BallTriangle
+            height="70"
+            width="70"
+            color="#ff868e"
+            ariaLabel="loading"
+          />
+        </div>
       )}
 
       {breed && (
@@ -236,16 +230,16 @@ const BreedsPage = () => {
       )}
 
       {!hiddenBtn && (
-        <div>
+        <div className={s.RouteBtnWrapper}>
           <button
             type="button"
             className={s.PrevievBtn}
             onClick={decrementPage}
           >
-            Previev
+            &#10095; &#160;Previev
           </button>
           <button type="button" className={s.NextBtn} onClick={incrementPage}>
-            Next
+            Next&#160; &#10094;
           </button>
         </div>
       )}

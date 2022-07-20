@@ -1,7 +1,5 @@
 .Main {
   width: 680px;
-  height: 100vh;
-  /* border: 1px solid blue; */
-  /* overflow: hidden; */
-  /* overflow: scroll; */
+  margin-right: 30px;
+  margin-top: 30px;
 }

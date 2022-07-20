@@ -6,8 +6,6 @@ const fetchData = async (endpoint, options = {}) => {
     `${BASE_URL}/${endpoint}?api_key=${API_KEY}`,
     options,
   );
-  // console.log(res);
-  // console.log(res.json());
   return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
 };
 
@@ -15,26 +13,37 @@ const fetchDataPagination = async (
   endpoint,
   limit = null,
   page = null,
-  breed_ids = '',
+  breed_id = '',
   order = '',
+  mime_types = '',
   options = {},
 ) => {
   const queryParams = new URLSearchParams({
-    key: 'b1dfeea4-d632-4776-b494-723bac3c8eb2',
+    api_key: 'b1dfeea4-d632-4776-b494-723bac3c8eb2',
     limit,
     page,
-    breed_ids,
+    breed_id,
     order,
+    mime_types,
   });
 
-  const res = await fetch(
-    `${BASE_URL}/${endpoint}?api_key=${queryParams}`,
-    options,
-  );
+  const res = await fetch(`${BASE_URL}/${endpoint}?${queryParams}`, options);
   return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
 };
 
 const getData = (endpoint, options = {}) => fetchData(endpoint, { ...options });
+
+const getSingleBreed = (
+  endpoint,
+  limit = null,
+  id = '',
+  order = '',
+  mime_types = '',
+  options = {},
+) =>
+  fetchDataPagination(endpoint, limit, id, order, mime_types, {
+    ...options,
+  });
 
 const getBreeds = (
   endpoint,
@@ -42,8 +51,12 @@ const getBreeds = (
   page = null,
   id = '',
   order = '',
+  mime_types = '',
   options = {},
-) => fetchDataPagination(endpoint, limit, page, id, order, { ...options });
+) =>
+  fetchDataPagination(endpoint, limit, page, id, order, mime_types, {
+    ...options,
+  });
 
 const addVote = (endpoint, data, options = {}) => {
   const finalOptions = {
@@ -79,6 +92,7 @@ export {
   getData,
   addVote,
   getBreeds,
+  getSingleBreed,
   // editItem,
   // deleteItem
 };

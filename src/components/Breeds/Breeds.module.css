@@ -7,8 +7,17 @@
   /* border: 1px solid red; */
 }
 
+.Loader {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 .BtnWrapper {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .BigButton {
@@ -58,7 +67,6 @@
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 140px;
   counter-reset: li;
-  margin-top: 20px;
 }
 
 .GalleryItem {
@@ -162,4 +170,48 @@
 .Letter {
   width: 19px;
   height: 22px;
+}
+
+/* Previev and Next btns */
+.RouteBtnWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.PrevievBtn,
+.NextBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 40px;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  background-color: #f8f8f7;
+  color: var(--text-color);
+}
+
+.PrevievBtn:hover,
+.NextBtn:hover {
+  background-color: #fbe0dc;
+  color: var(--accent-color);
+}
+
+.PrevievBtn {
+  margin-right: 20px;
+}
+
+.NextBtn {
+  margin-right: 20px;
+}
+
+.ArrowNextBtn {
+  margin-left: 10px;
 }
